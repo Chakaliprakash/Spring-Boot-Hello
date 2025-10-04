@@ -1,9 +1,221 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head><title>Hello</title></head>
-<body>
-<h1>Hello World! 🎉</h1>
-<p>You are logged in successfully.</p>
-<a href="/logout">Logout</a>
+<html lang="en" x-data="{ menuOpen: false }">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prakash Chakali | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0c1e6f3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white scroll-smooth">
+
+  <!-- Logout button at top right -->
+  <div class="absolute top-4 right-4">
+    <a href="/logout" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded shadow-lg">Logout</a>
+  </div>
+
+  <section class="relative h-screen flex items-center justify-center text-center px-4">
+    <div id="particles-js"></div>
+    <div class="animate__animated animate__fadeInUp glass p-8 rounded-xl shadow-xl">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Hi, I'm <span class="text-blue-400">Prakash Chakali</span></h1>
+      <p class="text-xl md:text-2xl text-gray-300 mb-6">Java Developer | Cybersecurity Student | Gen AI Explorer</p>
+      <div class="space-x-4">
+        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded shadow-lg">Get in Touch</a>
+        <a href="https://www.linkedin.com/in/prakash-chakali-753b82292" target="_blank" class="bg-gradient-to-r from-blue-500 to-cyan-500 hover:opacity-90 text-white font-semibold py-2 px-6 rounded shadow-lg">
+          <i class="fab fa-linkedin mr-2"></i> LinkedIn
+        </a>
+        <a href="https://github.com/Chakaliprakash" target="_blank" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-6 rounded shadow-lg">
+          <i class="fab fa-github mr-2"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-16 px-6 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4">About Me</h2>
+    <p class="text-gray-300 leading-loose">
+      I’m a passionate and driven CSE student specializing in Cyber Security at Sri Indu College of Engineering and Technology. My core strengths lie in Java, Python, and system-level languages like C/C++. I aspire to be a Middleware Architect and love exploring secure backend systems, Gen AI innovations, and real-world simulations.
+    </p>
+  </section>
+
+  <section id="skills" class="bg-gray-800 py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
+        <div class="glass p-4 rounded shadow-xl hover:scale-105 transition tilt">Java</div>
+        <div class="glass p-4 rounded shadow-xl hover:scale-105 transition tilt">C</div>
+        <div class="glass p-4 rounded shadow-xl hover:scale-105 transition tilt">C++</div>
+        <div class="glass p-4 rounded shadow-xl hover:scale-105 transition tilt">Python</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="py-16 px-6 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4">Education</h2>
+    <div class="glass p-6 rounded-lg shadow-lg border-l-4 border-blue-500 tilt">
+      <h3 class="text-xl font-semibold">Sri Indu College of Engineering and Technology</h3>
+      <p class="text-gray-400">B.Tech in Cyber Security (2022 – 2026)</p>
+      <p class="text-gray-300">Currently in 3rd year, learning advanced topics in cybersecurity and backend development.</p>
+    </div>
+  </section>
+
+  <section id="certifications" class="py-16 px-6 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6">Certifications</h2>
+    <div class="space-y-6">
+      <div class="glass p-6 rounded-lg shadow-lg tilt">
+        <h3 class="text-xl font-semibold text-white">Generative AI Academy</h3>
+        <p class="text-gray-400">Google Cloud & H2S • <span class="italic">May 28, 2025</span></p>
+        <ul class="list-disc list-inside text-gray-300 mt-2">
+          <li>Vertex AI, Gemini APIs, Imagen, Streamlit</li>
+          <li>Multimodal RAG and Gen AI system design</li>
+        </ul>
+      </div>
+      <div class="glass p-6 rounded-lg shadow-lg tilt">
+        <h3 class="text-xl font-semibold text-white">Cybersecurity Analyst Job Simulation</h3>
+        <p class="text-gray-400">Tata & Forage • <span class="italic">May 1, 2025</span></p>
+        <ul class="list-disc list-inside text-gray-300 mt-2">
+          <li>IAM strategy & assessment</li>
+          <li>Custom IAM integration tasks</li>
+        </ul>
+      </div>
+      <div class="glass p-6 rounded-lg shadow-lg tilt">
+        <h3 class="text-xl font-semibold text-white">Java Programming Internship</h3>
+        <p class="text-gray-400">InfiTech Learn • <span class="italic">Apr–May 2025</span></p>
+        <p class="text-gray-300 mt-2">4-week internship with practical Java development and learning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GitHub & Featured Projects Section -->
+  <section id="github" class="py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8">GitHub & Featured Projects</h2>
+      <div class="flex justify-center mb-8">
+        <img src="https://github-readme-stats.vercel.app/api?username=Chakaliprakash&show_icons=true&theme=dark" 
+             alt="GitHub Stats" class="glass p-4 rounded-xl shadow-lg tilt" />
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="glass p-6 rounded-lg shadow-lg tilt">
+          <h3 class="text-xl font-semibold mb-2"  style="color: #00ffff; text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;">
+            💡✨AI-powered Skill Marketplace
+          </h3>
+          <p class="text-gray-300 mb-4">
+---As part of my academic and creative journey, I conceptualized and developed an <strong>AI-powered Skill Marketplace</strong>—a platform designed to intelligently connect individuals based on their talents, expertise, and project needs. Leveraging machine learning algorithms, the system enables seamless matching between skill providers and seekers, fostering collaboration, learning, and opportunity. This project reflects my passion for innovation, user-centric design, and the transformative potential of AI in building inclusive digital ecosystems.
+</p>
+
+          <a href="https://github.com/Chakaliprakash/ai-skill-marketplace" target="_blank" class="text-blue-400 hover:text-blue-600">
+            View Repo &rarr;
+          </a>
+        </div>
+        <div class="glass p-6 rounded-lg shadow-lg tilt">
+          <h3 class="text-xl font-semibold mb-2" style="color: #00ffff; text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;">
+  🧠🛠️Dynamic-Multilevel-Caching-System-2.0📊
+</h3>
+
+          <p class="text-gray-300 mb-4">----This project implements a dynamic multilevel caching system in Java. The system manages data across multiple cache levels with different eviction policies. It supports dynamic addition and removal of cache levels, efficient data retrieval and insertion, and a basic implementation of eviction policies.
+
+Components
+CacheEntry.java: Defines a cache entry, tracking its value and access frequency (for LFU policy).
+CacheLevel.java: Implements a single cache level with eviction policies (LRU or LFU).
+DynamicMultilevelCache.java: Manages multiple cache levels, handling data retrieval, insertion, and dynamic level management.
+Main.java: Contains sample test cases to demonstrate and verify the functionality of the caching system.</p>
+          <a href="https://github.com/Chakaliprakash/Dynamic-Multilevel-Caching-System-2.0" target="_blank" class="text-blue-400 hover:text-blue-600">
+            View Repo &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="bg-gray-800 py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8">Contact Me</h2>
+      <p class="text-gray-300 mb-4">I'm open to opportunities, collaborations, and projects. Let's connect!</p>
+      <p class="text-lg"><i class="fas fa-envelope mr-2"></i>vickyprakash768@gmail.com</p>
+      <p class="text-lg"><i class="fas fa-phone mr-2"></i>+91 63027 14896</p>
+
+      <div class="mt-6 flex justify-center space-x-6">
+        <a href="https://www.linkedin.com/in/prakash-chakali-753b82292" target="_blank"
+           class="glass px-6 py-3 rounded-lg text-blue-400 hover:text-blue-600 shadow-lg tilt">
+           <i class="fab fa-linkedin text-2xl"></i>
+        </a>
+        <a href="https://github.com/Chakaliprakash" target="_blank"
+           class="glass px-6 py-3 rounded-lg text-white hover:text-gray-300 shadow-lg tilt">
+           <i class="fab fa-github text-2xl"></i>
+        </a>
+      </div>
+
+      <div class="mt-10 flex justify-center">
+        <div class="glass p-4 rounded-xl shadow-lg tilt">
+          <div class="LI-profile-badge"
+               data-version="v1"
+               data-size="large"
+               data-locale="en_US"
+               data-type="vertical"
+               data-theme="dark"
+               data-vanity="prakash-chakali-753b82292">
+            <a class="LI-simple-link"
+               href="https://www.linkedin.com/in/prakash-chakali-753b82292?trk=profile-badge">
+               Prakash Chakali
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-gray-500 py-6 text-center text-sm">
+    © 2025 Prakash Chakali. All rights reserved.
+  </footer>
+
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80 },
+        "size": { "value": 3 },
+        "color": { "value": "#00BFFF" },
+        "line_linked": { "enable": true, "color": "#00BFFF" },
+        "move": { "speed": 2 }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" }
+        }
+      }
+    });
+
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+      max: 15,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.3
+    });
+  </script>
+
+  <!-- LinkedIn Badge Script -->
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
 </body>
 </html>
