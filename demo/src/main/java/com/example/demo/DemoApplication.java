@@ -14,16 +14,18 @@ public class DemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
+@Bean
+CommandLineRunner init(UserRepository repo) {
+    return args -> {
+        if (repo.findByUsername("PrakashChakali") == null) {
+            com.example.demo.model.User user = new com.example.demo.model.User();
+            user.setUsername("PrakashChakali");
+            user.setPassword("Prakash123."); 
+            repo.save(user);
+            System.out.println("User created");
+            
+        }
+    };
+}
 
-    @Bean
-    CommandLineRunner init(UserRepository repo, PasswordEncoder encoder) {
-        return args -> {
-            if (repo.findByUsername("admin") == null) {
-                User user = new User();
-                user.setUsername("PrakashChakali");
-                user.setPassword(encoder.encode("Prakash123."));
-                repo.save(user);
-            }
-        };
-    }
 }

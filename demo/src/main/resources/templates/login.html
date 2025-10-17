@@ -1,12 +1,80 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head><title>Login</title></head>
-<body>
-<h2>Login Page</h2>
-<form th:action="@{/login}" method="post">
-    <div><input type="text" name="username" placeholder="Username"/></div>
-    <div><input type="password" name="password" placeholder="Password"/></div>
-    <div><button type="submit">Login</button></div>
-</form>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Prakash Chakali</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center h-screen">
+
+  <div id="particles-js"></div>
+
+  <div class="glass p-8 rounded-xl shadow-xl w-full max-w-md animate__animated animate__fadeIn">
+    <h1 class="text-3xl font-bold text-center mb-6 drop-shadow-lg">Login to <span class="text-blue-400">Prakash Chakali's</span> Portfolio</h1>
+    
+    <form action="/login" method="POST">
+      <div class="mb-4">
+        <label for="email" class="block text-gray-300 text-sm font-semibold mb-2">Email</label>
+        <input type="email" id="email" name="email"
+               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 border-gray-600 text-white"
+               placeholder="your@example.com" required>
+      </div>
+      <div class="mb-6">
+        <label for="password" class="block text-gray-300 text-sm font-semibold mb-2">Password</label>
+        <input type="password" id="password" name="password"
+               class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 border-gray-600 text-white"
+               placeholder="*********" required>
+      </div>
+      <div class="flex items-center justify-between">
+        <button type="submit"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow-lg focus:outline-none focus:shadow-outline w-full">
+          Sign In
+        </button>
+      </div>
+      <div class="mt-4 text-center">
+        <a href="#" class="inline-block align-baseline font-bold text-sm text-blue-400 hover:text-blue-600">
+          Forgot Password?
+        </a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80 },
+        "size": { "value": 3 },
+        "color": { "value": "#00BFFF" },
+        "line_linked": { "enable": true, "color": "#00BFFF" },
+        "move": { "speed": 2 }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" }
+        }
+      }
+    });
+  </script>
+
 </body>
 </html>
